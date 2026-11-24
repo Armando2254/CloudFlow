@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador de infraestructura en la nube</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.5 18a4.5 4.5 0 0 1-.4-8.98A6 6 0 0 1 17.6 8.5 4.8 4.8 0 0 1 17.5 18z"/>
+      </svg>
+      <div>
+        <h1>Infraestructura en la nube</h1>
+        <p>El recorrido de una solicitud, de principio a fin</p>
+      </div>
+    </div>
+
+    <ul class="legend" aria-label="Leyenda del diagrama">
+      <li><span class="swatch ext"></span>Externo</li>
+      <li><span class="swatch cloud"></span>Nube del proveedor</li>
+      <li><span class="line req"></span>Solicitud</li>
+      <li><span class="line res"></span>Respuesta</li>
+    </ul>
+  </header>
+
+  <main class="layout">
+    <section class="stage" aria-label="Diagrama interactivo">
+      <div class="canvas" id="canvas">
+        <svg id="diagram" xmlns="http://www.w3.org/2000/svg" role="group"
+             aria-label="Diagrama de una infraestructura en la nube"></svg>
+      </div>
+
+      <div class="controls">
+        <div class="buttons">
+          <button type="button" id="btnStart" class="btn primary">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5l12 7-12 7z"/></svg>
+            <span id="startLabel">Iniciar simulación</span>
+          </button>
+          <button type="button" id="btnPause" class="btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+            Pausar
+          </button>
+          <button type="button" id="btnNext" class="btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l9 7-9 7zM18 5v14"/></svg>
+            Avanzar paso a paso
+          </button>
+          <button type="button" id="btnReset" class="btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v5h5"/></svg>
+            Reiniciar
+          </button>
+        </div>
+
+        <div class="progress">
+          <div class="progress-label">
+            <span id="progressStep">Listo para comenzar</span>
+            <span id="progressPct">0 %</span>
+          </div>
+          <div class="segments" id="segments" role="progressbar"
+               aria-label="Progreso de la simulación"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
