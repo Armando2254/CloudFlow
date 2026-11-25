@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simulador de infraestructura en la nube</title>
+  <title>Del proyecto local a la nube</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,15 +14,17 @@
         <path d="M6.5 18a4.5 4.5 0 0 1-.4-8.98A6 6 0 0 1 17.6 8.5 4.8 4.8 0 0 1 17.5 18z"/>
       </svg>
       <div>
-        <h1>Infraestructura en la nube</h1>
-        <p>El recorrido de una solicitud, de principio a fin</p>
+        <h1>Del proyecto local a la nube</h1>
+        <p>Cómo un desarrollador contrata, configura y administra su infraestructura</p>
       </div>
     </div>
 
     <ul class="legend" aria-label="Leyenda del diagrama">
-      <li><span class="swatch ext"></span>Externo</li>
-      <li><span class="swatch cloud"></span>Nube del proveedor</li>
-      <li><span class="line req"></span>Solicitud</li>
+      <li><span class="swatch dev"></span>Desarrollador</li>
+      <li><span class="swatch res"></span>Recursos del cliente</li>
+      <li><span class="swatch phys"></span>Infraestructura física</li>
+      <li><span class="line req"></span>Acción del desarrollador</li>
+      <li><span class="line int"></span>Trabajo del proveedor</li>
       <li><span class="line res"></span>Respuesta</li>
     </ul>
   </header>
@@ -31,7 +33,7 @@
     <section class="stage" aria-label="Diagrama interactivo">
       <div class="canvas" id="canvas">
         <svg id="diagram" xmlns="http://www.w3.org/2000/svg" role="group"
-             aria-label="Diagrama de una infraestructura en la nube"></svg>
+             aria-label="Diagrama de un desarrollador que usa la infraestructura de un proveedor de nube"></svg>
       </div>
 
       <div class="controls">
